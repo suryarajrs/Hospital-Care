@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*,::before,::after{            /*Insert something after & before the content of each element*/
+    box-sizing: border-box;  /*padding and border are included in the width and height*/
+    margin: 0;
+    padding: 0;
+    
+}
+
+:root{        /*The :root selector matches the document's root element.*/
+    --bg-color: #F7FFF7;
+    --bg-elements: #EE6C4D;
+    --col1: #98C1D9;
+    --col2: #293241;
+    --font: 'Lato', sans-serif;
+}
+
+body{
+    font-family: var(--font);
+    background: var(--col1);
+}
+
+
+.brand-title a{
+    font-size: 3rem;       /* The root element's font-size 1 rem will also equal 16px*/ 
+    margin: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 5px black;    /*0px horizontal,vertical shadow, 5px black add blur effect*/
+    font-family: 'Itim', cursive;
+}
+
+.services{
+    width:90vw;
+    max-width: 900px;   /*If the content is larger than the maximum width, it will automatically change the height of ...*/
+    margin-inline: auto;    /*defines both the logical inline start and end margins */
+    margin-block: 10vh;  /*Viewport Height 10vh=10%*/
+}
+
+.card{
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3); /*Red-Green-Blue-Alpha*/
+    background-color: var(--col2); 
+    color: var(--bg-color);
+    margin-block: 3vh;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;    /*automatically align like column or row*/
+    flex-basis: 0;  /*specifies the initial length of a flexible item*/
+    align-items: center;
+}
+
+.head{
+    font-size: 1.5rem;    /* The root element's font-size 1 rem will also equal 16px*/
+    margin-left: 1rem;
+}
+
+.body{
+    font-size: 1rem;
+}
+
+.card>span{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: var(--bg-color);
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    cursor: pointer;   /*mouse cursor for display*/
+}
+
+.card>span:hover{
+    box-shadow: 0px 0px 10px blue;    /*horizontal,vertical shadow*/   
+}
+.add{
+    background-color: green;
+    padding: 0.5rem 1.3rem;   /*0.5 for top and bottom paddings ,1.3 right and left paddings*/
+}
+
+.remove{
+    background-color: red;
+    padding: 0.5rem;
+}
+
+/* ---------------------CART-------------------------------- */
+
+.cart{
+    width:90vw;
+    max-width: 900px; /*If the content is larger than the maximum width, it will automatically change the height */
+    margin-inline: auto;    
+    margin-top: 5vh;  /*Viewport Height 10vh=10%*/
+    margin-bottom: 5vh;
+    background: var(--col2);
+    color: var(--bg-color);
+    text-align: center;  /*Centers the text*/
+    box-shadow: 0.5rem -0.5rem 0 black;  /*horizontal,vertical shadow*/
+}
+
+.items{
+    width: 100%;
+    display:none; /*The element is completely removed*/
+    padding: 1rem;
+    font-size: 1.5rem;  /* The root element's font-size 1 rem will also equal 16px*/ 
+}
+.item-name{
+    width: 60%;
+    margin-left: 5vw;  /*sets the margin area on the left side*/
+    text-align: left;
+}
+
+.item-price{
+    width: 40%;
+    margin-right: 5vw;   /*Viewport width 10vh=10%*/
+    text-align: right;
+}
+.items-total{
+    width: 100%;
+    display:flex;  /*automatically align like column or row*/
+    padding: 1rem;
+    font-size: 1.5rem;
+
+}
+.total{
+    width: 60%;
+    margin-left: 5vw;
+    text-align: left;
+}
+
+.final-price{
+    width: 40%;
+    margin-right: 5vw;
+    text-align: right;
+}
+
+@media (min-width: 900px) {
+    .container{
+        display: flex; /*automatically align like column or row*/
+        justify-content: space-evenly;  /*distributes the space between items evenly*/
+    }
+    h1{
+        display: none;
+    }
+    .services{
+        width:60%;
+        margin-inline: auto;    /*defines both the logical inline start and end margins*/
+        margin-block: 1vh;
+    }
+    .cart{
+        width:40%;
+        margin-right: 5rem;  /*sets the margin area on the right side*/
+        margin-block: 2vh;   /*start and end in the block direction*/
+        background: var(--col2);
+        color: var(--bg-color);
+        text-align: center;
+        box-shadow: 0.5rem -0.5rem 0 black;
+    }
+    .total{
+        width: 50%;
+        margin-left: 5vw;
+        text-align: left;
+    }
+    
+    .final-price{
+        width: 50%;
+        margin-right: 3vw;
+        text-align: right;
+    }
+}
+
+
+/* -------------------FOOTER------------------------ */
+
+#footer{
+    min-height: 30vh; /*defines the minimum height of an element. If the content is smaller than the minimum height, the minimum height will be applied*/
+    display: flex;  /*automatically align like column or row*/
+    flex-direction: row; /*flexible items are displayed horizontally, as a row*/
+    flex-wrap: wrap;  /*Make the flexible items wrap if necessary*/      
+    background-color: var(--col2);
+    justify-content: space-around;  /*Items will have space before, between, and after them*/
+    color: var(--bg-color);
+    align-items: center;
+}
+.footer-logo{
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.quick-links{
+    font-size: 1.5rem;
+}
+
+.quick-links>ul{
+    list-style: none;
+    font-size: 1rem;
+    padding: 0.5rem; /*one declaration*/
+}
+
+.quick-links>ul>li{
+    margin: 0.5rem; /*margin properties in one declaration*/
+}
+
+.quick-links>ul>li>a{
+    text-decoration: none; 
+    color: var(--bg-color);
+}
+
+
+/* -------------------UTIL---------------------- */
+
+.btn{
+    display: block;  /*It starts on a new line, and takes up the whole width*/
+    margin: auto;  /*remaining space will be split equally between the left and right margins.*/
+    width: 25vw;
+    min-width: 300px; /*defines the minimum height of an element*/
+    font-size: 2.5rem;
+    background-color: var(--bg-elements);
+    border-radius: 3rem;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid var(--bg-elements);
+    color: var(--bg-color);
+    margin-block: 1rem;  /*Set the margin for both sides in the block direction*/
+    cursor: pointer;
+}
+
+.btn:hover{   /*used to select elements when you mouse over them*/
+    transition: 1s; /*change property values smoothly, over 1s given duration.*/
+    transform: scale(1.1); /*scale transformation, changing the element's width*/
+    background-color: var(--bg-color);
+    color: var(--bg-elements);
+}
